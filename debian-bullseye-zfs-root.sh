@@ -1,11 +1,11 @@
 #!/bin/bash -e
 #
-# debian-buster-zfs-root.sh V1.00
+# debian-bullseye-zfs-root.sh
 #
-# Install Debian GNU/Linux 10 Buster to a native ZFS root filesystem
+# Install Debian GNU/Linux 11 Bullseye to a native ZFS root filesystem
 #
 # (C) 2018-2019 Hajo Noerenberg
-#
+# (kewiha's fork & upgrade to Bullseye)
 #
 # http://www.noerenberg.de/
 # https://github.com/hn/debian-buster-zfs-root
@@ -26,8 +26,8 @@
 
 ### Static settings
 
-ZPOOL=rpool
-TARGETDIST=buster
+ZPOOL=p
+TARGETDIST=bullseye
 
 PARTBIOS=1
 PARTEFI=2
@@ -37,9 +37,9 @@ SIZESWAP=2G
 SIZETMP=3G
 SIZEVARTMP=3G
 
-NEWHOST="" #Manually specify hostname of new install, otherwise it will be generated
+NEWHOST="dn2" #Manually specify hostname of new install, otherwise it will be generated
 NEWDNS="nameserver 8.8.8.8\nnameserver 8.8.4.4"
-NOSWAP="" #Set NOSWAP to be something other than "" and no SWAP dataset will be created/used
+NOSWAP="donotswap" #Set NOSWAP to be something other than "" and no SWAP dataset will be created/used
 NEWPATH=$PATH
 
 ### User settings
